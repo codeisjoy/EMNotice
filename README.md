@@ -1,7 +1,7 @@
 #EMNoticeView
 A customisable notice view in Swift
 
-![EMNoticeView Screenshot](https://github.com/codeisjoy/EMNoticeView/blob/master/EMNoticeView.png)
+![EMNoticeView Screenshot](https://github.com/codeisjoy/EMNotice/blob/master/EMNoticeView.png)
 
 You can change notice view colour theme and font and fire a sequence of notices with different duration, text and image.<br/>
 Notice views will support rotation and should work for both iPhone and iPad with minimum iOS version of 8.0
