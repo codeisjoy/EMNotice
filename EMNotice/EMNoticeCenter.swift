@@ -108,7 +108,7 @@ class EMNoticeCenter: NSObject {
     private func dismissNotice(notice: EMNoticeView) {
         if let recognizers = notice.gestureRecognizers {
             for recognizer in recognizers {
-                notice.removeGestureRecognizer(recognizer as UIGestureRecognizer)
+                notice.removeGestureRecognizer(recognizer as! UIGestureRecognizer)
             }
         }
 
@@ -149,7 +149,7 @@ private class EMNoticeWindow: UIWindow {
     private override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
         var hitTest: UIView? = nil;
         // Grabbing the event if it happenes on subviews
-        for subview in rootViewController?.view.subviews as [UIView] {
+        for subview in rootViewController?.view.subviews as! [UIView] {
             if CGRectContainsPoint(subview.frame, point) == true {
                 hitTest = super.hitTest(point, withEvent: event)
                 break;
@@ -173,8 +173,7 @@ private class EMNoticeViewController: UIViewController {
         super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
 
         for subview in view.subviews {
-            if subview.isKindOfClass(EMNoticeView.classForCoder()) {
-                let notice: EMNoticeView = subview as EMNoticeView
+            if let notice = subview as? EMNoticeView {
                 notice.frame = CGRect(origin: CGPointZero, size: notice.sizeThatFits(size))
             }
         }

@@ -88,23 +88,21 @@ class EMNoticeView: UIView {
     }
 
     // MARK: - Overriden Methods
-
-    override init() {
-        super.init()
-        backgroundColor = EMNoticeType.Error.toColor()
-    }
     
     private override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = EMNoticeType.Error.toColor()
     }
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        backgroundColor = EMNoticeType.Error.toColor()
     }
 
     convenience init(duration: NSTimeInterval) {
         self.init()
         self.duration = duration
+        backgroundColor = EMNoticeType.Error.toColor()
     }
     
     override func willMoveToSuperview(newSuperview: UIView?) {
